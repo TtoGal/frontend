@@ -1,10 +1,10 @@
 import AppBar from '@components/AppBar';
-import Button from '@components/Button';
+import Btn from '@components/Btn';
 import DismissKeyboardView from '@components/DismissKeyboardView';
 import Txt from '@components/Txt';
 import {JOB_MAPPING} from '@constants/auth';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import JobButton from '@screens/signup/components/JobButton';
+import JobBtn from '@screens/signup/components/JobBtn';
 import {JobStatus} from '@type/api/auth';
 import AuthStackParamList from '@type/nav/AuthStackParamList';
 import {useState} from 'react';
@@ -54,7 +54,7 @@ const SignupJobScreen = ({route, navigation}: Readonly<AuthProps>) => {
 
           <View className="flex-row justify-between">
             {JOB_MAPPING.slice(0, 3).map(({status, label, icon}) => (
-              <JobButton
+              <JobBtn
                 key={status}
                 icon={icon}
                 label={label}
@@ -66,7 +66,7 @@ const SignupJobScreen = ({route, navigation}: Readonly<AuthProps>) => {
           <View className="h-[20]" />
           <View className="flex-row justify-between">
             {JOB_MAPPING.slice(3, 6).map(({status, label, icon}) => (
-              <JobButton
+              <JobBtn
                 key={status}
                 icon={icon}
                 label={label}
@@ -78,7 +78,7 @@ const SignupJobScreen = ({route, navigation}: Readonly<AuthProps>) => {
           <View className="h-[20]" />
           <View className="flex-row justify-between">
             {JOB_MAPPING.slice(6).map(({status, label, icon}) => (
-              <JobButton
+              <JobBtn
                 key={status}
                 icon={icon}
                 label={label}
@@ -91,7 +91,7 @@ const SignupJobScreen = ({route, navigation}: Readonly<AuthProps>) => {
       </DismissKeyboardView>
 
       <View className="absolute left-0 bottom-[47] w-full px-[32]">
-        <Button
+        <Btn
           text="다음"
           onPress={() => {
             navigation.navigate('SignupBirthScreen', {

@@ -1,23 +1,24 @@
 import Txt from '@components/Txt';
-import {JOB_MAPPING} from '@constants/auth';
-import {JobStatus} from '@type/api/auth';
+import {GENDER_MAPPING} from '@constants/auth';
+import {GenderType} from '@type/api/auth';
 import {Pressable} from 'react-native';
 
-const JobButton = ({
+const GenderBtn = ({
   icon,
   label,
   onPress,
-  selectedJob,
+  selectedGender,
 }: Readonly<{
   icon: string;
   label: string;
   onPress: () => void;
-  selectedJob: JobStatus | null;
+  selectedGender: GenderType | null;
 }>) => {
   return (
     <Pressable
-      className={`border h-[90] py-[18] justify-center items-center w-[100] ${
-        label === JOB_MAPPING.find(({status}) => status === selectedJob)?.label
+      className={`border h-[105] py-[22] justify-center items-center w-[117] ${
+        label ===
+        GENDER_MAPPING.find(({type}) => type === selectedGender)?.label
           ? 'border-darkGray'
           : 'border-lightGray'
       }`}
@@ -29,4 +30,4 @@ const JobButton = ({
   );
 };
 
-export default JobButton;
+export default GenderBtn;

@@ -1,4 +1,4 @@
-import Button from '@components/Button';
+import Btn from '@components/Btn';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import AuthStackParamList from '@type/nav/AuthStackParamList';
 import {SafeAreaView, Text, View} from 'react-native';
@@ -11,7 +11,7 @@ const LoginScreen = ({navigation}: Readonly<AuthProps>) => {
       <Text>또갈집</Text>
 
       <View className="absolute left-0 bottom-[66] w-full px-[32]">
-        <Button
+        <Btn
           text="가입하기"
           onPress={() => {
             navigation.navigate('SignupEmailScreen');

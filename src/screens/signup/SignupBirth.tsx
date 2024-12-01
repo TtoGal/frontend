@@ -1,11 +1,11 @@
 import AppBar from '@components/AppBar';
-import Button from '@components/Button';
+import Btn from '@components/Btn';
 import DismissKeyboardView from '@components/DismissKeyboardView';
 import Input from '@components/Input';
 import Txt from '@components/Txt';
 import {GENDER_MAPPING} from '@constants/auth';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import GenderButton from '@screens/signup/components/GenderButton';
+import GenderBtn from '@screens/signup/components/GenderBtn';
 import {GenderType} from '@type/api/auth';
 import AuthStackParamList from '@type/nav/AuthStackParamList';
 import {useState} from 'react';
@@ -67,7 +67,7 @@ const SignupBirthScreen = ({route, navigation}: Readonly<AuthProps>) => {
           <View className="h-[40]" />
           <View className="flex-row justify-around">
             {GENDER_MAPPING.map(({type, label, icon}) => (
-              <GenderButton
+              <GenderBtn
                 key={type}
                 icon={icon}
                 label={label}
@@ -80,7 +80,7 @@ const SignupBirthScreen = ({route, navigation}: Readonly<AuthProps>) => {
       </DismissKeyboardView>
 
       <View className="absolute left-0 bottom-[47] w-full px-[32]">
-        <Button
+        <Btn
           text="다음"
           onPress={handleSubmit}
           disabled={birthday === '' || !gender}

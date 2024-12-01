@@ -1,5 +1,5 @@
 import AppBar from '@components/AppBar';
-import Button from '@components/Button';
+import Btn from '@components/Btn';
 import Txt from '@components/Txt';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import RootStackParamList from '@type/nav/RootStackParamList';
@@ -46,7 +46,7 @@ const SignupCompleteScreen = ({navigation}: Readonly<RootProps>) => {
           className="underline text-center text-darkGray"
         />
         <View className="h-[9]" />
-        <Button
+        <Btn
           text="온보딩으로 이동"
           onPress={() => navigation.navigate('AppTabNav')}
         />

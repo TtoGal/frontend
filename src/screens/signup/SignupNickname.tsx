@@ -1,5 +1,5 @@
 import AppBar from '@components/AppBar';
-import Button from '@components/Button';
+import Btn from '@components/Btn';
 import DismissKeyboardView from '@components/DismissKeyboardView';
 import Input from '@components/Input';
 import Txt from '@components/Txt';
@@ -57,7 +57,7 @@ const SignupNicknameScreen = ({route, navigation}: Readonly<AuthProps>) => {
       </DismissKeyboardView>
 
       <View className="absolute left-0 bottom-[47] w-full px-[32]">
-        <Button
+        <Btn
           text="다음"
           onPress={() => {
             navigation.navigate('SignupPasswordScreen', {
