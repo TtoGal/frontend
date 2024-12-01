@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        l: 'Pretendard-Light',
         r: 'Pretendard-Regular',
         m: 'Pretendard-Medium',
         sb: 'WantedSans-SemiBold',
@@ -12,8 +13,12 @@ module.exports = {
       textColor: {
         white: '#fafafa',
         black: '#373737',
+        darkGray: '#404040',
       },
-      backgroundColor: {},
+      backgroundColor: {
+        primary: '#FEE500',
+        lightGray: '#E7E7E7',
+      },
       borderColor: {},
       borderRadius: {},
       padding: {},
