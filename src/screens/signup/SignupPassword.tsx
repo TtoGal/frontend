@@ -61,6 +61,7 @@ const SignupPasswordScreen = ({route, navigation}: Readonly<AuthProps>) => {
               setPassword(text);
               setIsPasswordSame(text === passwordCheck);
             }}
+            isPassword
           />
           <View className="h-[20]" />
           <Input
@@ -70,6 +71,7 @@ const SignupPasswordScreen = ({route, navigation}: Readonly<AuthProps>) => {
               setPasswordCheck(text);
               setIsPasswordSame(text === password);
             }}
+            isPassword
           />
         </View>
       </DismissKeyboardView>

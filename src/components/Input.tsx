@@ -4,10 +4,12 @@ const Input = ({
   label,
   value,
   onChangeText,
+  isPassword,
 }: Readonly<{
   label: string;
   value: string;
   onChangeText: (text: string) => void;
+  isPassword?: boolean;
 }>) => {
   return (
     <FloatingLabelInput
@@ -28,6 +30,8 @@ const Input = ({
         paddingHorizontal: 16,
       }}
       inputStyles={{position: 'relative', top: 4, color: '#4F4F4F'}}
+      isPassword={isPassword}
+      showPasswordImageStyles={{tintColor: '#D9D9D9'}}
     />
   );
 };
