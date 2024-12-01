@@ -26,7 +26,7 @@ const AppInner = () => {
         );
       }
     })();
-    console.log('AppInner useEffect', Config.API_URL); // undefined
+    console.log(Config.API_URL);
   }, []);
 
   return (
