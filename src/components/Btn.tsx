@@ -2,19 +2,14 @@ import Txt from '@components/Txt';
 import LottieView from 'lottie-react-native';
 import {Pressable} from 'react-native';
 
-type ButtonProps = {
+type BtnProps = {
   text: string;
   onPress: () => void;
   disabled?: boolean;
   isLoading?: boolean;
 };
 
-const Button = ({
-  text,
-  onPress,
-  disabled,
-  isLoading,
-}: Readonly<ButtonProps>) => {
+const Btn = ({text, onPress, disabled, isLoading}: Readonly<BtnProps>) => {
   return (
     <Pressable
       className={`h-[56] justify-center items-center flex-row ${
@@ -44,4 +39,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default Btn;

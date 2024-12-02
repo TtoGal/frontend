@@ -18,8 +18,12 @@ module.exports = {
       backgroundColor: {
         primary: '#FEE500',
         lightGray: '#E7E7E7',
+        darkGray: '#404040',
       },
-      borderColor: {},
+      borderColor: {
+        lightGray: '#E7E7E7',
+        darkGray: '#404040',
+      },
       borderRadius: {},
       padding: {},
       margin: {},
