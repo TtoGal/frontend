@@ -1,19 +1,17 @@
 type AuthStackParamList = {
   LoginRegisterScreen: undefined;
   LoginScreen: undefined;
-  SignupEmailScreen: undefined;
-  SignupNicknameScreen: {name: string; email: string};
-  SignupPasswordScreen: {name: string; email: string; nickname: string};
+  SignupNicknameScreen: undefined;
+  SignupEmailScreen: {nickname: string};
+  SignupPasswordScreen: {nickname: string; email: string};
   SignupJobScreen: {
-    name: string;
-    email: string;
     nickname: string;
+    email: string;
     password: string;
   };
   SignupBirthScreen: {
-    name: string;
-    email: string;
     nickname: string;
+    email: string;
     password: string;
     job: string;
   };

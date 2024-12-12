@@ -1,7 +1,7 @@
 import Txt from '@components/Txt';
 import {GENDER_MAPPING} from '@constants/auth';
 import {GenderType} from '@type/api/auth';
-import {Pressable} from 'react-native';
+import {Pressable, View} from 'react-native';
 
 const GenderBtn = ({
   icon,
@@ -16,16 +16,16 @@ const GenderBtn = ({
 }>) => {
   return (
     <Pressable
-      className={`border h-[105] py-[22] justify-center items-center w-[117] ${
+      className={`border h-[92] py-[16] justify-center items-center w-full rounded-brand ${
         label ===
         GENDER_MAPPING.find(({type}) => type === selectedGender)?.label
-          ? 'border-darkGray'
-          : 'border-lightGray'
+          ? 'border-primary bg-primary50'
+          : 'border-gray300'
       }`}
-      style={{borderRadius: 8}}
       onPress={onPress}>
       <Txt type="title2" text={icon} />
-      <Txt type="body3" text={label} />
+      <View className="h-[8]" />
+      <Txt type="title2" text={label} className="text-gray700" />
     </Pressable>
   );
 };

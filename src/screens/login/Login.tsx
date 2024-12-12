@@ -50,7 +50,7 @@ const LoginScreen = ({navigation}: Readonly<AuthProps>) => {
           <LoginBtn
             text="로그인"
             onPress={() => {
-              navigation.navigate('SignupEmailScreen');
+              navigation.navigate('SignupNicknameScreen');
             }}
           />
           <Pressable onPress={() => navigation.navigate('LoginRegisterScreen')}>

@@ -35,7 +35,7 @@ const LoginRegisterScreen = ({navigation}: Readonly<AuthProps>) => {
           <LoginBtn
             text="또갈집 가입하기"
             onPress={() => {
-              navigation.navigate('SignupEmailScreen');
+              navigation.navigate('SignupNicknameScreen');
             }}
           />
           <Pressable onPress={() => navigation.navigate('LoginScreen')}>

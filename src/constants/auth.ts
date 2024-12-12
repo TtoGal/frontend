@@ -6,8 +6,8 @@ const JOB_MAPPING: {status: JobStatus; label: string; icon: string}[] = [
   {status: 'FREELANCER', label: '프리랜서', icon: '👩🏻‍💻'},
   {status: 'JOB_SEEKING', label: '구직 중', icon: '🔎'},
   {status: 'ENTREPRENEUR', label: '사업가', icon: '🏪'},
-  {status: 'ON_LEAVE', label: '휴직 중', icon: '🏖️'},
-  {status: 'OTHERS', label: '기타', icon: '➰'},
+  {status: 'ON_LEAVE', label: '휴직 중', icon: '👒'},
+  {status: 'OTHERS', label: '기타', icon: '🎸'},
 ];
 
 const GENDER_MAPPING: {type: GenderType; label: string; icon: string}[] = [

@@ -22,11 +22,11 @@ const AuthStackNav = () => {
         component={LoginRegisterScreen}
       />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="SignupEmailScreen" component={SignupEmailScreen} />
       <Stack.Screen
         name="SignupNicknameScreen"
         component={SignupNicknameScreen}
       />
+      <Stack.Screen name="SignupEmailScreen" component={SignupEmailScreen} />
       <Stack.Screen
         name="SignupPasswordScreen"
         component={SignupPasswordScreen}

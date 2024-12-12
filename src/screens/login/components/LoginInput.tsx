@@ -16,7 +16,7 @@ const LoginInput = ({
       label={label}
       value={value}
       onChangeText={onChangeText}
-      className="h-[56] border"
+      className="h-[56]"
       customLabelStyles={{
         colorFocused: '#703424',
         fontSizeFocused: 10,

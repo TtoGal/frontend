@@ -1,7 +1,7 @@
 import Txt from '@components/Txt';
 import {JOB_MAPPING} from '@constants/auth';
 import {JobStatus} from '@type/api/auth';
-import {Pressable} from 'react-native';
+import {Pressable, View} from 'react-native';
 
 const JobBtn = ({
   icon,
@@ -16,15 +16,15 @@ const JobBtn = ({
 }>) => {
   return (
     <Pressable
-      className={`border h-[90] py-[18] justify-center items-center w-[100] ${
+      className={`border h-[92] py-[18] justify-center items-center w-[106] rounded-brand ${
         label === JOB_MAPPING.find(({status}) => status === selectedJob)?.label
-          ? 'border-darkGray'
-          : 'border-lightGray'
+          ? 'border-primary bg-primary50'
+          : 'border-gray300'
       }`}
-      style={{borderRadius: 8}}
       onPress={onPress}>
-      <Txt type="title2" text={icon} />
-      <Txt type="body3" text={label} />
+      <Txt type="heading1" text={icon} />
+      <View className="h-[8]" />
+      <Txt type="title2" text={label} className="text-gray700" />
     </Pressable>
   );
 };

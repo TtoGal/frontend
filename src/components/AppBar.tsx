@@ -1,5 +1,5 @@
 import {Pressable, View, ViewStyle} from 'react-native';
-import ChevronRightBlackIcon from '@assets/images/chevron_right_black.svg';
+import BackIcon from '@assets/images/back.svg';
 import Txt from '@components/Txt';
 
 type AppBarProps = {
@@ -19,18 +19,18 @@ const AppBar = ({
   return (
     <View
       {...props}
-      className={`flex-row items-center justify-between px-[16] border-b border-b-white/5 ${props.className}`}
+      className={`h-[64] flex-row items-center justify-between px-[20] border-b border-b-white/5 ${props.className}`}
       style={props.style}>
       {goBackCallbackFn ? (
         <Pressable className="flex-1 py-[18]" onPress={goBackCallbackFn}>
-          <ChevronRightBlackIcon />
+          <BackIcon />
         </Pressable>
       ) : (
         <View className="flex-1" />
       )}
       {title ? (
         <Txt
-          type="button"
+          type="heading2"
           text={title}
           className="text-center flex-1 py-[18]"
         />
@@ -41,7 +41,7 @@ const AppBar = ({
         <Pressable
           className="flex-1 py-[18] flex-row justify-end"
           onPress={exitCallbackFn}>
-          <ChevronRightBlackIcon />
+          <BackIcon />
         </Pressable>
       ) : (
         <View className="flex-1" />

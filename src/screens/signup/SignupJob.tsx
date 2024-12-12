@@ -10,17 +10,23 @@ import AuthStackParamList from '@type/nav/AuthStackParamList';
 import {useState} from 'react';
 import {SafeAreaView, View} from 'react-native';
 
-type AuthProps = NativeStackScreenProps<
-  AuthStackParamList,
-  'SignupEmailScreen'
->;
+type AuthProps = NativeStackScreenProps<AuthStackParamList, 'SignupJobScreen'>;
 
 const SignupJobScreen = ({route, navigation}: Readonly<AuthProps>) => {
-  const {name, email, nickname, password} = route.params;
+  const {nickname, email, password} = route.params;
   const [job, setJob] = useState<JobStatus | null>(null);
 
+  const handleNext = () => {
+    navigation.navigate('SignupBirthScreen', {
+      nickname,
+      email,
+      password,
+      job: job!,
+    });
+  };
+
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-white">
       <DismissKeyboardView>
         <AppBar
           title="회원가입"
@@ -29,29 +35,27 @@ const SignupJobScreen = ({route, navigation}: Readonly<AuthProps>) => {
           }}
           className="absolute top-[0] w-full"
         />
-        <View className="absolute top-[83] left-0 w-full px-[32]">
+        <View className="absolute top-[64] left-0 w-full">
+          <View className="h-[4] bg-gray100 w-full" style={{borderRadius: 8}} />
+        </View>
+        <View className="absolute top-[64] left-0 w-full">
           <View
-            className="h-[4] bg-lightGray w-full"
-            style={{borderRadius: 4}}
+            className="h-[4] bg-primary w-[64%]"
+            style={{borderRadius: 8}}
           />
         </View>
 
-        <View className="absolute top-[83] left-0 w-full px-[32]">
-          <View
-            className="h-[4] bg-darkGray w-[68%]"
-            style={{borderRadius: 4}}
-          />
-        </View>
-
-        <View className="mt-[123] px-[32]">
-          <Txt type="title4" text="거의 다 왔어요!" />
+        <View className="mt-[104] px-[20]">
+          <Txt type="heading1" text="거의 다 왔어요!" />
           <View className="h-[8]" />
-          <Txt
-            type="body3"
-            text={`${name}님의 현재 상태를 알려주세요! (택 1)`}
-          />
-          <View className="h-[40]" />
+          <View className="flex-row items-center">
+            <Txt type="heading1" text={nickname} className="text-tertiary" />
+            <Txt type="heading1" text="님의 현재 상태를 알려주세요" />
+          </View>
+          <View className="h-[8]" />
+          <Txt type="body2" text="보기 중 택1" className="text-gray500" />
 
+          <View className="h-[48]" />
           <View className="flex-row justify-between">
             {JOB_MAPPING.slice(0, 3).map(({status, label, icon}) => (
               <JobBtn
@@ -90,20 +94,8 @@ const SignupJobScreen = ({route, navigation}: Readonly<AuthProps>) => {
         </View>
       </DismissKeyboardView>
 
-      <View className="absolute left-0 bottom-[47] w-full px-[32]">
-        <Btn
-          text="다음"
-          onPress={() => {
-            navigation.navigate('SignupBirthScreen', {
-              name,
-              email,
-              nickname,
-              password,
-              job: job!,
-            });
-          }}
-          disabled={!job}
-        />
+      <View className="absolute left-0 bottom-[64] w-full px-[20]">
+        <Btn text="다음" onPress={handleNext} disabled={!job} />
       </View>
     </SafeAreaView>
   );

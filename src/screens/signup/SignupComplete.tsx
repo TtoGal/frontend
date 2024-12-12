@@ -3,7 +3,8 @@ import Btn from '@components/Btn';
 import Txt from '@components/Txt';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import RootStackParamList from '@type/nav/RootStackParamList';
-import {SafeAreaView, View} from 'react-native';
+import LottieView from 'lottie-react-native';
+import {Pressable, SafeAreaView, View} from 'react-native';
 
 type RootProps = NativeStackScreenProps<RootStackParamList>;
 
@@ -17,35 +18,42 @@ const SignupCompleteScreen = ({navigation}: Readonly<RootProps>) => {
         }}
         className="absolute top-[0] w-full"
       />
-      <View className="absolute top-[83] left-0 w-full px-[32]">
-        <View className="h-[4] bg-lightGray w-full" style={{borderRadius: 4}} />
+      <View className="absolute top-[64] left-0 w-full">
+        <View className="h-[4] bg-gray100 w-full" style={{borderRadius: 8}} />
+      </View>
+      <View className="absolute top-[64] left-0 w-full">
+        <View className="h-[4] bg-primary w-[100%]" style={{borderRadius: 8}} />
       </View>
 
-      <View className="absolute top-[83] left-0 w-full px-[32]">
-        <View
-          className="h-[4] bg-darkGray w-[100%]"
-          style={{borderRadius: 4}}
-        />
-      </View>
+      <View className="mt-[-50]" />
 
-      <Txt type="title2" text="🥳" style={{fontSize: 55, padding: 30}} />
-      {/* <View className="h-[15]" /> */}
-      <Txt type="title2" text="가입을 축하합니다!" />
-      <View className="h-[25]" />
+      <LottieView
+        style={{
+          width: 150,
+          height: 150,
+        }}
+        source={require('@assets/lotties/emotion.lottie')}
+        autoPlay
+        loop
+      />
+      <View className="h-[24]" />
+      <Txt type="heading1" text="가입을 축하합니다!" />
+      <View className="h-[24]" />
       <Txt
-        type="body3"
+        type="body1"
         text={'온보딩 화면을 통해\n앱 사용 방법을 간단히 알아보세요!'}
-        className="text-center"
+        className="text-center text-gray700"
       />
       <View className="h-[40]" />
 
-      <View className="absolute left-0 bottom-[47] w-full px-[32]">
-        <Txt
-          type="caption1"
-          text="그냥 바로 이용할래요"
-          className="underline text-center text-darkGray"
-        />
-        <View className="h-[9]" />
+      <View className="absolute left-0 bottom-[64] w-full px-[20]">
+        <Pressable onPress={() => navigation.navigate('AppTabNav')}>
+          <Txt
+            type="body2"
+            text="그냥 바로 이용할래요"
+            className="text-black py-[13.5] text-center underline"
+          />
+        </Pressable>
         <Btn
           text="온보딩으로 이동"
           onPress={() => navigation.navigate('AppTabNav')}

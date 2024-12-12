@@ -61,7 +61,9 @@ module.exports = {
       },
       backgroundColor: {
         primary: '#fbd341',
+        primary50: '#fef8df',
         primary500: '#fabe00',
+        gray100: '#f1f1f1',
         gray300: '#d7d7d7',
         secondary: '#370600',
         secondary700: '#552117',
