@@ -2,7 +2,7 @@ import Txt from '@components/Txt';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import LoginBtn from '@screens/login/components/LoginBtn';
 import AuthStackParamList from '@type/nav/AuthStackParamList';
-import {ImageBackground, SafeAreaView, View} from 'react-native';
+import {ImageBackground, Pressable, SafeAreaView, View} from 'react-native';
 
 type AuthProps = NativeStackScreenProps<
   AuthStackParamList,
@@ -38,11 +38,13 @@ const LoginRegisterScreen = ({navigation}: Readonly<AuthProps>) => {
               navigation.navigate('SignupEmailScreen');
             }}
           />
-          <Txt
-            type="body2"
-            text="이미 계정이 있으신가요?"
-            className="text-black py-[13.5] text-center"
-          />
+          <Pressable onPress={() => navigation.navigate('LoginScreen')}>
+            <Txt
+              type="body2"
+              text="이미 계정이 있으신가요?"
+              className="text-black py-[13.5] text-center"
+            />
+          </Pressable>
         </View>
       </ImageBackground>
     </SafeAreaView>

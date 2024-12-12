@@ -74,6 +74,7 @@ module.exports = {
         positive: '#4CAF50',
         warning: '#E53935',
         delay: '#FB8C00',
+        secondary500: '#703424',
       },
       borderRadius: {
         brand: 16,
