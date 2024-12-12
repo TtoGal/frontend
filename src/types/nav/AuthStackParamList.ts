@@ -1,4 +1,5 @@
 type AuthStackParamList = {
+  LoginRegisterScreen: undefined;
   LoginScreen: undefined;
   SignupEmailScreen: undefined;
   SignupNicknameScreen: {name: string; email: string};

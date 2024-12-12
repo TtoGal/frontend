@@ -9,11 +9,11 @@ type BtnProps = {
   isLoading?: boolean;
 };
 
-const Btn = ({text, onPress, disabled, isLoading}: Readonly<BtnProps>) => {
+const LoginBtn = ({text, onPress, disabled, isLoading}: Readonly<BtnProps>) => {
   return (
     <Pressable
       className={`h-[56] justify-center items-center flex-row px-[24] rounded-brand ${
-        disabled ? 'bg-gray300' : 'bg-primary'
+        disabled ? 'bg-gray300' : 'bg-secondary'
       }`}
       onPress={onPress}
       disabled={disabled}>
@@ -28,14 +28,10 @@ const Btn = ({text, onPress, disabled, isLoading}: Readonly<BtnProps>) => {
           loop
         />
       ) : (
-        <Txt
-          type="title1"
-          text={text}
-          className={`${disabled ? 'text-white' : 'text-gray900'}`}
-        />
+        <Txt type="title1" text={text} className="text-white" />
       )}
     </Pressable>
   );
 };
 
-export default Btn;
+export default LoginBtn;
