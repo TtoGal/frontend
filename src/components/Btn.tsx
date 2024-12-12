@@ -1,26 +1,34 @@
 import Txt from '@components/Txt';
 import LottieView from 'lottie-react-native';
-import {Pressable} from 'react-native';
+import {Pressable, TextStyle, ViewStyle} from 'react-native';
 
-type ButtonProps = {
+type BtnProps = {
   text: string;
   onPress: () => void;
   disabled?: boolean;
   isLoading?: boolean;
+  isSmall?: boolean;
+  className?: string;
+  style?: ViewStyle | ViewStyle[];
+  textStyle?: TextStyle | TextStyle[];
 };
 
-const Button = ({
+const Btn = ({
   text,
   onPress,
   disabled,
   isLoading,
-}: Readonly<ButtonProps>) => {
+  isSmall,
+  className,
+  style,
+  textStyle,
+}: Readonly<BtnProps>) => {
   return (
     <Pressable
       className={`h-[56] justify-center items-center flex-row ${
-        disabled ? 'bg-lightGray' : 'bg-primary'
-      }`}
-      style={{borderRadius: 12}}
+        isSmall ? 'px-[16]' : 'px-[24]'
+      } rounded-brand ${disabled ? 'bg-gray300' : 'bg-primary'} ${className}`}
+      style={style}
       onPress={onPress}
       disabled={disabled}>
       {isLoading ? (
@@ -35,13 +43,14 @@ const Button = ({
         />
       ) : (
         <Txt
-          type="button"
+          type={isSmall ? 'body1' : 'title1'}
           text={text}
-          className={`${disabled ? 'text-darkGray' : 'text-black'}`}
+          className={`${disabled ? 'text-white' : 'text-gray900'}`}
+          style={textStyle}
         />
       )}
     </Pressable>
   );
 };
 
-export default Button;
+export default Btn;
