@@ -16,6 +16,10 @@ const AuthStackNav = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        gestureEnabled: true,
+        gestureDirection: 'horizontal',
+        animation: 'slide_from_right',
+        animationDuration: 300,
       }}>
       <Stack.Screen
         name="LoginRegisterScreen"
